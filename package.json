@@ -1,0 +1,34 @@
+{
+  "name": "notablehealth",
+  "version": "1.0.0",
+  "description": "Server to integrate doctor's calendars with the Notable platform",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aat38/notableServer.git"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "errorHandling",
+    "controllers",
+    "models"
+  ],
+  "author": "Amber Torrise",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aat38/notableServer/issues"
+  },
+  "homepage": "https://github.com/aat38/notableServer#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "uniqid": "^5.4.0"
+  }
+}
