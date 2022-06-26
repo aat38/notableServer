@@ -1,11 +1,11 @@
 ## GET '/doctors'
 
 
-Example Request:
+### Example Request:
 
     http://localhost:3000/doctors
 
-Example Response:
+### Example Response:
 
     200
         {
@@ -23,7 +23,7 @@ Example Response:
             }
         }    
 
-Example Error:
+### Example Error:
 
     404
         {

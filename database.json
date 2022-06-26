@@ -1,16 +1,16 @@
 {
     "doctors": {
         "uniqueDocId1": {
-            "first": "Samuel",
-            "last": "Tenor"
+            "first": "FirstName1",
+            "last": "LastName1"
         },
         "uniqueDocId3": {
-            "first": "S",
-            "last": "T"
+            "first": "FirstName2",
+            "last": "LastName2"
         },
         "uniqueDocId2": {
-            "first": "A",
-            "last": "B"
+            "first": "FirstName3",
+            "last": "LastName3"
         }
     },
     "appointments": {
@@ -20,7 +20,7 @@
             "patientLast": "last",
             "date": "05-30-2022",
             "time": "9:45AM",
-            "type": "type1"
+            "type": "new-patient"
         },
         "uniqueAptId2": {
             "doctorId": "uniqueDocId3",
@@ -28,7 +28,7 @@
             "patientLast": "pL",
             "date": "08-15-2022",
             "time": "10:45AM",
-            "type": "type2"
+            "type": "new-patient"
         },
         "uniqueAptId3": {
             "doctorId": "uniqueDocId3",
@@ -36,7 +36,7 @@
             "patientLast": "pL",
             "date": "08-15-2022",
             "time": "2:00PM",
-            "type": "type2"
+            "type": "follow-up"
         },
         "uniqueAptId4": {
             "doctorId": "uniqueDocId1",
@@ -44,7 +44,7 @@
             "patientLast": "pL",
             "date": "05-30-2022",
             "time": "10:45AM",
-            "type": "type2"
+            "type": "new-patient"
         }
     }
 }

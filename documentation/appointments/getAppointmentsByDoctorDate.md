@@ -1,12 +1,21 @@
 ## GET '/appointments/doctor/:doctorId/date/:date'
 
 
-Example Request:
+### Params: 
+
+| Param  | Type |
+| ------------- | ------------- |
+| "doctorId" | String |
+| "date"  | String: <em>MM-DD-YYYY<em/> |
+
+<br/>
+
+### Example Request:
 
     http://localhost:3000/appointments/doctor/FirstLast/date/08-15-2022
 
 
-Example Response:
+### Example Response:
 
     200
         {
@@ -21,7 +30,7 @@ Example Response:
         }
 
 
-Example Error:
+### Example Error:
 
     404
         {

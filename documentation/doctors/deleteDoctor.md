@@ -1,11 +1,19 @@
 ## DELETE '/doctors/:id'
 
 
-Example Request:
+### Params: 
+
+| Param  | Type |
+| ------------- | ------------- |
+| "id" | String |
+
+<br/>
+
+### Example Request:
 
     http://localhost:3000/doctors/randomdoctorId
 
-Example Response:
+### Example Response:
 
     200
         {
@@ -23,7 +31,7 @@ Example Response:
             }
         }    
 
-Example Error:
+### Example Error:
 
     404
         {

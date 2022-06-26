@@ -1,12 +1,19 @@
 ## GET '/appointments/date/:date'
 
+### Params: 
 
-Example Request:
+| Param  | Type |
+| ------------- | ------------- |
+| "date"  | String: <em>MM-DD-YYYY<em/> |
+
+<br/>
+
+### Example Request:
 
     http://localhost:3000/appointments/date/08-15-2022
 
 
-Example Response:
+### Example Response:
 
     200
         {
@@ -22,7 +29,7 @@ Example Response:
 
 
 
-Example Error:
+### Example Error:
 
     404
         {

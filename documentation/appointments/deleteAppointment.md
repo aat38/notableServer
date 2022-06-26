@@ -1,12 +1,19 @@
 ## DELETE '/appointments/:id'
 
+### Params: 
 
-Example Request:
+| Param  | Type |
+| ------------- | ------------- |
+| "id" | String |
+
+<br/>
+
+### Example Request:
 
     http://localhost:3000/appointments/AppointmentId
 
 
-Example Response:
+### Example Response:
 
     200
         {
@@ -28,7 +35,7 @@ Example Response:
             }
         } 
 
-Example Error:
+### Example Error:
 
     404
         {

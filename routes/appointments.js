@@ -7,6 +7,7 @@ router.get('/appointments/doctor/:doctorId', appointmentController.getAppointmen
 router.get('/appointments/date/:date', appointmentController.getAppointmentsByDate);
 router.get('/appointments/doctor/:doctorId/date/:date', appointmentController.getAppointmentsByDoctorDate);
 router.get('/appointments', appointmentController.getAllAppointments);
+router.put('/appointments/:id', appointmentController.putAppointment);
 router.post('/appointments', appointmentController.postAppointment);
 router.delete('/appointments/:id', appointmentController.deleteAppointment);
 

@@ -96,6 +96,44 @@ const postAppointment = (req, res) => {
     res.status(200).json(newAppointment);
 };
 
+const putAppointment = (req, res) => {
+    if (req.params.id) {
+        if (!database.appointments[req.params.id]) {
+            return res.status(404).send({ error: 'Appointment not found. Cannot edit unknown appointment' });
+        }
+    }
+    let appointment = database.appointments[req.params.id];
+    if (req.body.doctorId) {
+        if (!(findDoctor(req.body.doctorId))) {
+            return res.status(404).send({ error: 'Doctor not found. Cannot update appointment for a doctor before creating that doctor.' });
+        }
+        appointment.doctorId = req.body.doctorId;
+    }
+    if (req.body.time & req.body.date) {
+        const list = getDocDateTimeList(req);
+        if (Object.keys(list).length >= 3) {
+            return res.status(400).send({ error: 'Doctor cannot accept any more appointments at this date/time.' });
+        }
+        if ((timeCheck(req.body.time)) == false) {
+            return res.status(400).send({ error: 'Unable to make appointment. New appointments can only start at 15 minute intervals.' });
+        }
+        appointment.date = req.body.date;
+        appointment.time = timeStandardize(req.body.time);
+    }
+    if (req.body.type) {
+        appointment.type = req.body.type;
+    }
+    if (req.body.patientFirst) {
+        appointment.patientFirst = req.body.patientFirst;
+    }
+    if (req.body.patientLast) {
+        appointment.patientLast = req.body.patientLast;
+    }
+    database.appointments[req.params.id] = appointment;
+
+    res.status(200).json(database.appointments[req.params.id]);
+};
+
 const deleteAppointment = (req, res) => {
     let id = req.params.id;
     if (database.appointments[id]) {
@@ -105,4 +143,4 @@ const deleteAppointment = (req, res) => {
     res.status(404).send({ error: 'Unable to delete appointment. Appointment not found.' });
 };
 
-module.exports = { getAppointment, getAppointmentsByDoctor, getAppointmentsByDate, getAppointmentsByDoctorDate, getAllAppointments, postAppointment, deleteAppointment };
+module.exports = { getAppointment, getAppointmentsByDoctor, getAppointmentsByDate, getAppointmentsByDoctorDate, getAllAppointments, postAppointment, putAppointment, deleteAppointment };

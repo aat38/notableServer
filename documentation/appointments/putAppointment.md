@@ -1,9 +1,10 @@
-## POST '/appointments'
+## PUT '/appointments/:id'
 
 ### Params:
 
 | Param  | Type |
 | ------------- | ------------- |
+| "id" | String |
 | "doctorId" | String |
 | "patientFirst"  | String  |
 | "patientLast"  | String  |
@@ -15,26 +16,22 @@
 
 ### Example Request:
 
-    http://localhost:3000/appointments
+    http://localhost:3000/appointments/appointmentId567
 
     Body: 
         {        
-            "doctorId": "Doctor",
-            "patientFirst": "first",
-            "patientLast": "last",
-            "date": "08-15-2022",
-            "time": "9:45AM",
-            "type": "new-patient"
+            "doctorId": "Doctor3",
+            "date": "10-20-2022",
         }
 
 ### Example Response:
 
     200
         {        
-            "doctorId": "Doctor",
+            "doctorId": "Doctor3",
             "patientFirst": "first",
             "patientLast": "last",
-            "date": "08-15-2022",
+            "date": "10-20-2022",
             "time": "9:45AM",
             "type": "new-patient"
         }
@@ -43,13 +40,13 @@ Example Error:
 
     404
         {
-        "error": "Doctor not found. Cannot create an appointment for a doctor before creating doctor."
+        "error": "Doctor not found. Cannot update appointment for a doctor before creating that doctor."
         }
 
 
-    400
+    404
         {
-        "error": "Unable to make appointment. New appointments can only start at 15 minute intervals."
+        "error": "Appointment not found. Cannot edit unknown appointment"
         }
 
 
@@ -57,3 +54,10 @@ Example Error:
         {
         "error": "Doctor cannot accept any more appointments at this date/time."
         }
+
+    400
+        {
+        "error": "Unable to change appointment. New appointments can only start at 15 minute intervals."
+        }
+    
+    

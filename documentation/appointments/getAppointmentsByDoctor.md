@@ -1,12 +1,20 @@
 ## GET '/appointments/doctor/:doctorId'
 
 
-Example Request:
+### Params: 
+
+| Param  | Type |
+| ------------- | ------------- |
+| "doctorId" | String |
+
+<br/>
+
+### Example Request:
 
     http://localhost:3000/appointments/doctor/FirstLast
 
 
-Example Response:
+### Example Response:
 
     200
         {
@@ -27,7 +35,7 @@ Example Response:
             "message": "No appointments found for chosen Doctor."
         }
 
-Example Error:
+### Example Error:
 
     404
         {
