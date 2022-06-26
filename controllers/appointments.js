@@ -7,7 +7,7 @@ const getAppointment = (req, res) => {
     const id = req.params.id;
     if (database.appointments[id]) {
         const appointment = database.appointments[id];
-        return res.json(appointment);
+        return res.status(200).json(appointment);
     }
     res.status(404).send({ error: 'Appointment not found.' });
 };
@@ -24,7 +24,7 @@ const getAppointmentsByDoctor = (req, res) => {
         }
     }
     if (Object.keys(appointments).length < 1) {
-        return res.status(200).send({
+        return res.status(404).send({
             message: 'No appointments found for chosen Doctor.'
         });
     }
@@ -39,7 +39,7 @@ const getAppointmentsByDate = (req, res) => {
         }
     }
     if (Object.keys(appointments).length < 1) {
-        return res.status(200).send({
+        return res.status(404).send({
             message: 'No appointments found on this date.'
         });
     }
@@ -53,30 +53,30 @@ const getAppointmentsByDoctorDate = (req, res) => {
         return res.status(404).send({ error: 'Doctor not found.' });
     }
     if (Object.keys(appointments).length < 1) {
-        return res.status(200).send({
+        return res.status(404).send({
             message: 'No appointments found for chosen Doctor on this date.'
         });
     }
-    res.json(appointments);
+    res.status(200).json(appointments);
 };
 
 const getAllAppointments = (req, res) => {
     if (Object.keys(database.appointments).length < 1) {
-        return res.status(200).send({
+        return res.status(404).send({
             message: 'No appointments found.'
         });
     }
-    res.json(database.appointments);
+    res.status(200).json(database.appointments);
 };
 
 const postAppointment = (req, res) => {
     const list = getDocDateTimeList(req);
-    const doctor = findDoctor(req.body.doctorId)
+    const doctor = findDoctor(req.body.doctorId);
     const id = uniqid();
     let newAppointment = new Appointment();
 
     if (Object.keys(list).length >= 3) {
-        return res.status(400).send({ error: 'Doctor cannot accept any more appointments at this date/time' })
+        return res.status(400).send({ error: 'Doctor cannot accept any more appointments at this date/time.' })
     }
     if ((timeCheck(req.body.time)) == false) {
         return res.status(400).send({ error: 'Unable to make appointment. New appointments can only start at 15 minute intervals.' });
@@ -93,14 +93,14 @@ const postAppointment = (req, res) => {
     newAppointment.type = req.body.type;
     database.appointments[id] = newAppointment;
 
-    res.json(newAppointment);
+    res.status(200).json(newAppointment);
 };
 
 const deleteAppointment = (req, res) => {
     let id = req.params.id;
     if (database.appointments[id]) {
         delete database.appointments[id];
-        return res.json(database.appointments);
+        return res.status(200).json(database.appointments);
     }
     res.status(404).send({ error: 'Unable to delete appointment. Appointment not found.' });
 };
