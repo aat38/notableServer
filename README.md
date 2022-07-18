@@ -15,7 +15,7 @@ $ node server.js
 Consult the API documentation in notableHealth/documentation before testing in Postman.
 
 #### Appointments 
-|  Route | Method       | Endpoint |
+|  Route | Method       | Documentation Link |
 | :------------- | :------------- | -----:|
 | /appointments/:id | ```DELETE```      | [deleteAppointment](documentation/appointments/deleteAppointment.md) |
 | /appointments | ```GET```      | [getAllAppointments](documentation/appointments/getAllAppointments.md) |
@@ -29,7 +29,7 @@ Consult the API documentation in notableHealth/documentation before testing in P
 <br/>
 
 #### Doctors 
-|  Route | Method       | Endpoint |
+|  Route | Method       | Documentation Link |
 | :------------- | :------------- | -----:|
 | /doctors/:id | ```DELETE```      | [deleteDoctor](documentation/doctors/deleteDoctor.md) |
 | /doctors | ```GET```      | [getAllDoctors](documentation/doctors/getAllDoctors.md) |
