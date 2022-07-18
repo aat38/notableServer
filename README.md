@@ -15,23 +15,23 @@ $ node server.js
 Consult the API documentation in notableHealth/documentation before testing in Postman.
 
 #### Appointments 
-|  CRUD       | Endpoint |
-| :------------- | -----:|
-| ```DELETE```      | [deleteAppointment](documentation/appointments/deleteAppointment.md) |
-| ```GET```      | [getAllAppointments](documentation/appointments/getAllAppointments.md) |
-| ```GET```      | [getAppointment](documentation/appointments/getAppointment.md) |
-| ```GET```      | [getAppointmentsByDate](documentation/appointments/getAppointmentsByDate.md) |
-| ```GET```      | [getAppointmentsByDoctor](documentation/appointments/getAppointmentsByDoctor.md) |
-| ```GET```      | [getAppointmentsByDoctorDate](documentation/appointments/getAppointmentsByDoctorDate.md) |
-| ```POST```      | [postAppointment](documentation/appointments/postAppointment.md) |
-| ```PUT```      | [putAppointment](documentation/appointments/putAppointment.md) |
+|  Route | Method       | Endpoint |
+| :------------- | :------------- | -----:|
+| /appointments/:id | ```DELETE```      | [deleteAppointment](documentation/appointments/deleteAppointment.md) |
+| /appointments | ```GET```      | [getAllAppointments](documentation/appointments/getAllAppointments.md) |
+| /appointments/:id | ```GET```      | [getAppointment](documentation/appointments/getAppointment.md) |
+| /appointments/date/:date | ```GET```      | [getAppointmentsByDate](documentation/appointments/getAppointmentsByDate.md) |
+| /appointments/doctor/:doctorId | ```GET```      | [getAppointmentsByDoctor](documentation/appointments/getAppointmentsByDoctor.md) |
+| /appointments/doctor/:doctorId/date/:date | ```GET```      | [getAppointmentsByDoctorDate](documentation/appointments/getAppointmentsByDoctorDate.md) |
+| /appointments | ```POST```      | [postAppointment](documentation/appointments/postAppointment.md) |
+| /appointments/:id | ```PUT```      | [putAppointment](documentation/appointments/putAppointment.md) |
 
 <br/>
 
 #### Doctors 
-|  CRUD       | Endpoint |
-| :------------- | -----:|
-| ```DELETE```      | [deleteDoctor](documentation/doctors/deleteDoctor.md) |
-| ```GET```      | [getAllDoctors](documentation/doctors/getAllDoctors.md) |
-| ```GET```      | [getDoctor](documentation/doctors/getDoctor.md) |
-| ```POST```      | [getDoctor](documentation/doctors/postDoctor.md) |
+|  Route | Method       | Endpoint |
+| :------------- | :------------- | -----:|
+| /doctors/:id | ```DELETE```      | [deleteDoctor](documentation/doctors/deleteDoctor.md) |
+| /doctors | ```GET```      | [getAllDoctors](documentation/doctors/getAllDoctors.md) |
+| /doctors/:id | ```GET```      | [getDoctor](documentation/doctors/getDoctor.md) |
+| /doctors | ```POST```      | [getDoctor](documentation/doctors/postDoctor.md) |
